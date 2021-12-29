@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Board Clone</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="options-container material-icons">
+            menu
+    </div>
+    <div class="toolbox-container scale-tools">
+        <div class="pencil "><img src="./Icons/pencil.png" alt="pencil"></div>
+        <div class="eraser"><img src="./Icons/eraser.png" alt="eraser"></div>
+        <div class="download"><img src="./Icons/download.png" alt="download"></div>
+        <div class="import"><img src="./Icons/import.png" alt="import"></div>
+        <div class="notes"><img src="./Icons/post-it.png" alt="notes"></div>
+        <div class="undo"><img src="./Icons/undo.png" alt="undo"></div>
+        <div class="redo"><img src="./Icons/redo.png" alt="redo"></div>
+    </div>
+    <div class="pencil-tool-container">
+        <div class="pencil-width-container">
+            <input type="range" min="2" max="10" value="3">
+        </div>
+        <div class="pencil-color-container">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-container">
+        <div class="eraser-width-container">
+            <input type="range" min="2" max="10" value="3">
+        </div>
+    </div>
+
+    <!-- <div class="sticky-notes-container">
+        <div class="header-container">
+            <div class="remove"><span class="material-icons">close</span></div>
+            <div class="minimize"><span class="material-icons">minimize</span></div>
+            <div class="maximize"><span class="material-icons">open_in_full</span></div>
+        </div>
+        <div class="sticky-notes">
+            <textarea spellcheck="false"></textarea>
+        </div>
+    </div> -->
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:5000");
+    </script>
+    <script src="script.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
